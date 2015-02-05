@@ -1554,7 +1554,8 @@
 
 					firstRotated = cosRotation * firstWidth;
 					lastRotated = cosRotation * lastWidth;
-
+						
+					
 					// We're right aligning the text now.
 					if (firstRotated + this.fontSize / 2 > this.yLabelWidth + 8){
 						this.xScalePaddingLeft = (firstRotated + this.fontSize / 2) / 3;
@@ -1567,7 +1568,8 @@
 
 				}
 				if (this.xLabelRotation > 0){
-					this.endPoint -= (Math.sin(toRadians(this.xLabelRotation))*originalLabelWidth + 3) / 3;
+					var multiplier = (this.xLabels.length > 10 ? 10 / this.xLabels.length : 1);
+					this.endPoint -= (Math.sin(toRadians(this.xLabelRotation))*originalLabelWidth + 3) / (multiplier * 3);
 				}
 			}
 			else{
@@ -1711,7 +1713,9 @@
 					ctx.font = this.font;
 					ctx.textAlign = (isRotated) ? "right" : "center";
 					ctx.textBaseline = (isRotated) ? "middle" : "top";
-					ctx.wrapText(label,0,0, 100,16)
+
+					var maxWidth = Math.ceil(this.xLabels.length / 8) * 100;
+					ctx.wrapText(label,0,0, maxWidth,16)
 					ctx.restore();
 				},this);
 
