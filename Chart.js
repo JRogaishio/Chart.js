@@ -1,7 +1,7 @@
 /*!
  * Chart.js
  * http://chartjs.org/
- * Version: 1.0.3
+ * Version: 1.0.2
  *
  * Copyright 2015 Nick Downie
  * Released under the MIT license
@@ -1557,7 +1557,7 @@
 						
 					// We're right aligning the text now.
 					if (firstRotated + this.fontSize / 2 > this.yLabelWidth + 8){
-						this.xScalePaddingLeft = (firstRotated + this.fontSize / 2) / Math.ceil(cosRotation*3);
+						this.xScalePaddingLeft = (firstRotated + this.fontSize / 2) / Math.ceil(cosRotation*2.5);
 					}
 					this.xScalePaddingRight = this.fontSize/2;
 
@@ -1713,7 +1713,7 @@
 					ctx.textAlign = (isRotated) ? "right" : "center";
 					ctx.textBaseline = (isRotated) ? "middle" : "top";
 
-					var maxWidth = Math.ceil(this.xLabels.length / 8) * 100;
+					var maxWidth = Math.ceil(this.xLabels.length / 12) * 100;
 					ctx.wrapText(label,0,0, maxWidth,16)
 					ctx.restore();
 				},this);
