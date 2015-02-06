@@ -1,7 +1,7 @@
 /*!
  * Chart.js
  * http://chartjs.org/
- * Version: 1.0.2
+ * Version: 1.0.3
  *
  * Copyright 2015 Nick Downie
  * Released under the MIT license
@@ -1555,10 +1555,9 @@
 					firstRotated = cosRotation * firstWidth;
 					lastRotated = cosRotation * lastWidth;
 						
-					
 					// We're right aligning the text now.
 					if (firstRotated + this.fontSize / 2 > this.yLabelWidth + 8){
-						this.xScalePaddingLeft = (firstRotated + this.fontSize / 2) / 3;
+						this.xScalePaddingLeft = (firstRotated + this.fontSize / 2) / Math.ceil(cosRotation*3);
 					}
 					this.xScalePaddingRight = this.fontSize/2;
 
