@@ -1568,7 +1568,7 @@
 				}
 				if (this.xLabelRotation > 0){
 					var multiplier = (this.xLabels.length > 10 ? 10 / this.xLabels.length : 1);
-					this.endPoint -= (Math.sin(toRadians(this.xLabelRotation))*originalLabelWidth + 3) / (multiplier * 3);
+					this.endPoint -= (Math.sin(toRadians(this.xLabelRotation))*originalLabelWidth + 3) / (multiplier * 2.5);
 				}
 			}
 			else{
